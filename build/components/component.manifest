@@ -1,6 +1,0 @@
-contract @activestate.com/koDBXConnection?database=Oracle;1 {d1f785e9-ad18-43af-910d-f59107171948}
-category komodo-DBX-Preferences %40activestate.com/koDBXPreference%3Fdatabase%3DOracle%3B1 @activestate.com/koDBXPreference?database=Oracle;1
-category komodo-DBX-DBConnections %40activestate.com/koDBXConnection%3Fdatabase%3DOracle%3B1 @activestate.com/koDBXConnection?database=Oracle;1
-contract @activestate.com/koDBXPreference?database=Oracle;1 {052182dd-338a-4e9d-a9c5-453821577ca6}
-component {052182dd-338a-4e9d-a9c5-453821577ca6} koDBConnOracle.py
-component {d1f785e9-ad18-43af-910d-f59107171948} koDBConnOracle.py
