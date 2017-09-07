@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>dbexplorer_oracle@ActiveState.com</em:id>
         <em:name>DBExplorer_oracle</em:name>
-        <em:version>1.0.1</em:version>
+        <em:version>1.0.2</em:version>
         <em:description>Oracle Adaptor for ActiveState Komodo's Database Explorer</em:description>
         <em:creator>Eric Promislow</em:creator>
         <em:unpack>true</em:unpack>
@@ -17,7 +17,7 @@
                 <!-- Komodo IDE's uuid -->
                 <em:id>{36E66FA0-F259-11D9-850E-000D935D3368}</em:id>
                 <em:minVersion>6.0.0-b1</em:minVersion>
-                <em:maxVersion>10.*</em:maxVersion>
+                <em:maxVersion>11.*</em:maxVersion>
             </Description>
         </em:targetApplication>
     </Description>
