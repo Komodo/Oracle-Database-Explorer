@@ -16,3 +16,4 @@ In Komodo, click on "Go to Anything", then navigate to "Packages" and search for
 **Updates**
 
 Version 1.0.1: Support Komodo 10.*
+Version 1.0.1: Support Komodo 11.*
