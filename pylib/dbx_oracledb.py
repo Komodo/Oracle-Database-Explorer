@@ -20,7 +20,7 @@ try:
     import cx_Oracle
     loaded = True
     disabled_reason = None
-except ImportError, ex:
+except ImportError as ex:
     sys.stderr.write("**************** Couldn't load cx_Oracle: %s\n" % (ex,))
     import missingAdaptor
     cx_Oracle = missingAdaptor.MissingAdaptor()
@@ -199,9 +199,9 @@ class Database(dbxlib.CommonDatabase):
                 items = cu.fetchall()
                 names = [row[0] for row in items]
                 return names
-        except NotImplementedError, ex:
+        except NotImplementedError as ex:
             raise OperationalError(ex.message)
-        except Exception, ex:
+        except Exception as ex:
             log.exception("listAllTablePartsByType(typeName:%s)", typeName)
             raise OperationalError(ex.message)
         
@@ -462,10 +462,10 @@ class Database(dbxlib.CommonDatabase):
                 log.debug("insertRowByNamesAndValues: %r", cmd)
                 self.do_query(cu, cmd)
                 res = True
-            except DatabaseError, ex:
+            except DatabaseError as ex:
                 log.exception("dbx_oracledb::insertRowByNamesAndValues: DatabaseError: failed")
                 raise
-            except Exception, ex:
+            except Exception as ex:
                 log.exception("dbx_oracledb::insertRowByNamesAndValues failed")
                 raise
         return res
@@ -487,7 +487,7 @@ class Database(dbxlib.CommonDatabase):
             try:
                 self.do_query(cu, cmd)
                 res = True
-            except Exception, ex:
+            except Exception as ex:
                 log.exception("dbx_oracledb::updateRow failed")
                 res = False
         return res
@@ -503,7 +503,7 @@ class Database(dbxlib.CommonDatabase):
             try:
                 self.do_query(cu, action)
                 res = True
-            except Exception, ex:
+            except Exception as ex:
                 log.exception("dbx_oracledb::executeCustomAction failed")
                 res = False
         return res
