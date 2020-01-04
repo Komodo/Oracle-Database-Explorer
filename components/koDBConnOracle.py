@@ -20,14 +20,14 @@ log.setLevel(logging.INFO)
 
 try:
     import dbxlib
-except ImportError, ex:
+except ImportError as ex:
     sys.stderr.write("Failed to load dbxlib: %s\n" % (ex,))
     raise
 
 try:
     import dbx_oracledb
     loaded = True
-except ImportError, ex:
+except ImportError as ex:
     sys.stderr.write("Failed to load dbx_oracledb: %s\n" % (ex,))
     loaded = False
 
@@ -105,7 +105,7 @@ class KoOracleDBXConnection(dbxlib.KoDBXConnection):
             names = sorted(table_names,
                            key=lambda item:item[0].lower())
             return names
-        except Exception, ex:
+        except Exception as ex:
             log.exception("Failed: KoOracleDBXConnection.getChildren")
             return [("Error: " + str(ex), 'error', None)]
 
@@ -140,7 +140,7 @@ class KoOracle_DBXDatabase(dbxlib.KoDBXConnectionChild):
             table_names = [(name, 'table', KoOracle_DBXTable(self, name)) for name in db.listAllTableNames()]
             names = sorted(table_names, key=lambda item:item[0].lower())
             return names
-        except Exception, ex:
+        except Exception as ex:
             log.exception("Failed: KoOracle_DBXDatabase.getChildren")
             return [("Error: " + str(ex), 'error', None)]
         
@@ -178,7 +178,7 @@ class KoOracle_DBXTable(dbxlib.KoDBXConnectionChild,KoOracleDBXTableConnection):
             column_names = [(name, 'column', KoOracle_DBXColumn(self, name)) for name in db.listAllColumnNames(self._dbname, self._table_name)]
             names = sorted(column_names, key=lambda item:item[0].lower())
             return names
-        except Exception, ex:
+        except Exception as ex:
             log.exception("Failed: KoOracleDBXConnection.getChildren")
             return [("Error: " + str(ex), 'error')]
 
